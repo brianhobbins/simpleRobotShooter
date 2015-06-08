@@ -3,16 +3,15 @@ package kiliboltGame.framework;
 import java.awt.Image;
 import java.util.ArrayList;
 
-
 public class Animation {
 
-	private ArrayList frames;
+	private ArrayList<AnimFrame> frames;
 	private int currentFrame;
 	private long animTime;
 	private long totalDuration;
 
 	public Animation() {
-		frames = new ArrayList();
+		frames = new ArrayList<AnimFrame>();
 		totalDuration = 0;
 
 		synchronized (this) {
@@ -51,7 +50,7 @@ public class Animation {
 	}
 
 	private AnimFrame getFrame(int i) {
-		return (AnimFrame) frames.get(i);
+		return frames.get(i);
 	}
 
 	private class AnimFrame {
